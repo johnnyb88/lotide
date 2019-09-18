@@ -16,16 +16,20 @@ const assertEqualArrays = function(arr1, arr2) {
 };
 
 const without = function(source, itemsToRemove) {
-  let removedArray = [];
-  for (let i = 0; i < source.length; i++)
-    if (source[i] !== itemsToRemove[i]) {
-      removedArray.push(source[i]);
+  let removedArray = source;
+  for (let i = 0; i < source.length; i++) {
+    for (let j = 0; j < itemsToRemove.length; j++) {
+    if (source[i] === itemsToRemove[j]) {
+      removedArray.splice(i, 1);
     }
+  }
+}
   return removedArray;
 };
 
 
-const words = ["hello", "world", "lighthouse"];
-without(["hello", "world", "lighthouse"], ["lighthouse"]); // no need to capture return value for this test case
-assertEqualArrays(words, ["hello", "world", "lighthouse"]);
-without([1, 2, 3], [1]); // => [2, 3]
+//const words = ["hello", "world", "lighthouse"];
+//without(["hello", "world", "lighthouse"], ["lighthouse"]); // no need to capture return value for this test case
+//assertEqualArrays(words, ["hello", "world", "lighthouse"]);
+//console.log(without([1, 2, 3], [1])); // => [2, 3]
+console.log(without(["1", "2", "3"], ["3", "2", "1"])); // => ["1"]

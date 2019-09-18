@@ -19,7 +19,6 @@ const countOnly = function(allItems, itemsToCount) {
     }
     console.log(item);
   }
-  
   return results;
 }
 

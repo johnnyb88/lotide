@@ -7,19 +7,19 @@ const assertEqual = function(actual, expected) {
 };
 
 
-const countLetters = function(string) {
-  let str = string.split(" ").join("");
-  let letters = {};
+const countLetters = function(sentence) {
+  let str = sentence.split(" ").join("");
+  const results = {};
+
   for (let i = 0; i < str.length; i++) {
-    if (!letters[str.charAt(i)]) {
-      letters[str.charAt(i)] = 1;
+    if (results[str[i]]) {
+      results[str[i]] += 1;
     } else {
-      let increment = 1;
-      letters[str.charAt(i)] += increment;
+      results[str[i]] = 1;
     }
   }
- 
-  return letters;
+  console.log(results);
+  return results;
 };
  
 countLetters("lighthouse in the house");

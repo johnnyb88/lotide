@@ -18,12 +18,13 @@ const assertEqualArrays = function(arr1, arr2) {
 
 const letterPositions = function(sentence) {
   const results = {};
+  sentence = sentence.toLowerCase().split(" ").join('');
 
   for (let i = 0; i < sentence.length; i++) {
     if (results[sentence[i]]) {
-      results[sentence[i]] += 1;
+      results[sentence[i]].push(i);
     } else {
-      results[sentence[i]] = 1;
+      results[sentence[i]] = [i];
     }
   }
   console.log(results);
@@ -31,8 +32,8 @@ const letterPositions = function(sentence) {
 };
 
 // TEST CODE
-assertEqualArrays(letterPositions("hello").e, [1]);
-assertEqualArrays(letterPositions("hello").l, [2]);
+//assertEqualArrays(letterPositions("hello").e, [1]);
+assertEqualArrays(letterPositions("hello my dear").l, [2, 3]);
 /*
 start with empty object
 loop through words -> word (???)

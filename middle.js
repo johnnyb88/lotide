@@ -1,19 +1,3 @@
-const eqArrays = function(arr1, arr2) {
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertEqualArrays = function(arr1, arr2) {
-  if (eqArrays(arr1, arr2) === true) {
-    console.log("The arrays match!");
-  } else {
-    console.log("The arrays do not match!");
-  }
-};
 
 const middle = function(arr) {
   let midArr = [];
@@ -29,7 +13,6 @@ const middle = function(arr) {
   return midArr;
 };
 
-assertEqualArrays(middle([1, 2, 3, 4, 5]), [3]);
-assertEqualArrays(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
-assertEqualArrays(middle([1, 2]), []);
-assertEqualArrays(middle([1]), []);
+
+
+module.exports = middle;

@@ -31,15 +31,11 @@ assertEqual(findKey({
   "Akelarre":  { stars: 3 }
 }, x => x.stars === 2), "noma"); // => "noma"
 
-
-
-/*const takeUntil = function(array, callback) {
-  const result = [];
-  for (let item of array) {
-    if (callback(item) !== true) {
-      result.push(item);
-    } else {
-      return result;
-    }
-  }
-} */
+assertEqual(findKey({
+  "josh":       { Age: 7},
+  "mark":       { Age: 56 },
+  "Barry":      { Age: 46 },
+  "Elijah":     { Age: 354 },
+  "OH":         { Age: 34 },
+  "Andrew":     { Age: 34}
+}, x => x.Age === 34), "OH");
